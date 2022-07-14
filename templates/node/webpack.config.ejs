@@ -1,0 +1,49 @@
+var path = require('path');
+var { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
+module.exports = {
+  mode: "development",
+  target: "<%= environment %>",
+  output: {
+    path: path.join(__dirname, "dist"),
+    filename: "[name].js",
+  },
+  <% if (language === "TS") { %>
+  entry: "./src/index.ts",
+    resolve: {
+    extensions: [".ts", ".tsx", ".js"],
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: {
+          loader: "ts-loader",
+        },
+      },
+    ],
+  },
+  <% } else if (language === "JS") { %>
+  entry: "./src/index.js",
+  resolve: {
+    extensions: [".js"],
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        },
+      },
+    ],
+  },
+  <% } %>
+
+  plugins: [new CleanWebpackPlugin()],
+};
