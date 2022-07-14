@@ -2,12 +2,10 @@
   "name": "js6d",
   "version": "0.0.1",
   "description": "js6d is a scaffold tool for node by jori",
-  "main": "index.js",
+  "main": "bin/js6d.js",
   "scripts": {
     "prepublish": "npm run build",
-    "postpublish": "npm run clear",
-    "build": "webpack",
-    "clear": "echo \"fake clear\""
+    "build": "webpack"
   },
   "bin": {
     "js6d": "bin/js6d.js"
