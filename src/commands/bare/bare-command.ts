@@ -1,7 +1,7 @@
 import Path from 'path';
 import { Command } from 'commander';
 import inquirer from "inquirer";
-import { AbstractCommand } from '../abstract';
+import { AbstractCommand } from '../abstract-command';
 import { Environment, InfoWrapper, Language } from "./common";
 import createProject from './create-project';
 
