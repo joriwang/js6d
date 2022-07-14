@@ -1,6 +1,6 @@
 {
   "name": "js6d",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "js6d is a scaffold tool for node by jori",
   "main": "bin/js6d.js",
   "scripts": {
